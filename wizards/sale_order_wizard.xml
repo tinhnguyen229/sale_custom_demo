@@ -1,0 +1,33 @@
+<odoo>
+    <record id="custom_sale_order_wizard" model="ir.ui.view">
+        <field name="name">custom.sale.order.wizard.form</field>
+        <field name="model">custom.sale.order.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Print Sale Order Report">
+                <group>
+                    <group>
+                        <field name="user_id"/>
+                        <field name="date_from"/>
+                        <field name="date_to"/>
+                    </group>
+                </group>
+                <footer>
+                    <button string="Print Report" type="object" name="print_pdf_report" class="btn-primary"/>
+                    <button string="Close" special="cancel" class="btn-secondary"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="custom_sale_order_wizard_action" model="ir.actions.act_window">
+        <field name="name">custom.sale.order.wizard.action</field>
+        <field name="res_model">custom.sale.order.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="custom_sale_order_wizard_menu" parent="sale.menu_sale_report"
+              name="Print PDF Report With Wizard"
+              action="custom_sale_order_wizard_action"
+              sequence="1000"/>
+</odoo>

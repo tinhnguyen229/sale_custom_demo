@@ -1,0 +1,56 @@
+<odoo>
+    <template id="action_report_saleorder_test_template_wizard">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <div class="oe_structure"/>
+                    <div class="row">
+                        <span>Name: <t t-esc="data['name']"/></span>
+                        <span>Date from: <t t-esc="data['date_from']"/></span>
+                        <span>Date to: <t t-esc="data['date_to']"/></span>
+                    </div>
+                    <div class="row">
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th style="text-align:left;"><strong>Name </strong></th>
+                                    <th style="text-align:left;"><strong>Login </strong></th>
+                                    <th style="text-align:left;"><strong>Company </strong></th>
+                                    <th style="text-align:left;"><strong>State </strong></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="user_datas" t-as="user_data">
+                                    <tr>
+                                        <td style="text-align:left;">
+                                            <t t-esc="user_data['name']"/>
+                                        </td>
+                                        <td style="text-align:left;">
+                                            <t t-esc="user_data['login']"/>
+                                        </td>
+                                        <td style="text-align:left;">
+                                            <t t-esc="user_data['company']"/>
+                                        </td>
+                                        <td style="text-align:left;">
+                                            <t t-esc="user_data['state']"/>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+
+    <record id="action_report_saleorder_test_template_wizard_test" model="ir.actions.report">
+        <field name="name">Test Report Sale Order Wizard</field>
+        <field name="model">custom.sale.order.wizard</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">sale_custom_demo.action_report_saleorder_test_template_wizard</field>
+        <field name="report_file">sale_custom_demo.action_report_saleorder_test_template_wizard</field>
+        <field name="binding_model_id" ref="model_custom_sale_order_wizard"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>
