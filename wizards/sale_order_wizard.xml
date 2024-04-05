@@ -29,5 +29,5 @@
     <menuitem id="custom_sale_order_wizard_menu" parent="sale.menu_sale_report"
               name="Print PDF Report With Wizard"
               action="custom_sale_order_wizard_action"
-              sequence="1000"/>
+              sequence="80"/>
 </odoo>

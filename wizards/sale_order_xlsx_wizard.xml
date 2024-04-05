@@ -1,0 +1,33 @@
+<odoo>
+    <record id="custom_sale_order_xlsx_wizard" model="ir.ui.view">
+        <field name="name">sale.order.xlsx.wizard.form</field>
+        <field name="model">sale.order.xlsx.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Print Sale Order Xlsx Report">
+                <group>
+                    <group>
+                        <field name="user_id"/>
+                        <field name="date_from"/>
+                        <field name="date_to"/>
+                    </group>
+                </group>
+                <footer>
+                    <button string="Print Report" type="object" name="action_generate_xlsx_report" class="btn-primary"/>
+                    <button string="Close" special="cancel" class="btn-secondary"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="custom_sale_order_xlsx_wizard_action" model="ir.actions.act_window">
+        <field name="name">sale.order.xlsx.wizard.action</field>
+        <field name="res_model">sale.order.xlsx.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="custom_sale_order_xlsx_wizard_menu" parent="sale.menu_sale_report"
+              name="Print Xlsx Report With Wizard"
+              action="custom_sale_order_xlsx_wizard_action"
+              sequence="90"/>
+</odoo>

@@ -1,0 +1,21 @@
+<odoo>
+<!--    <report id="action_report_saleorder_xlsx_test"-->
+<!--            model="sale.order"-->
+<!--            string="Test Report Sale Order Xlsx"-->
+<!--            report_type="xlsx"-->
+<!--            name="action_report_saleorder_xlsx_test"-->
+<!--            file="action_report_saleorder_xlsx_test"-->
+<!--            attachment_use="False"/>-->
+
+    <record id="report_saleorder_xlsx_test_wizard" model="ir.actions.report">
+        <field name="name">Test Report Sale Order Xlsx Wizard</field>
+        <field name="model">sale.order.xlsx.wizard</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">sale_custom_demo.report_saleorder_xlsx_test_wizard</field>
+        <field name="report_file">sale_custom_demo.report_saleorder_xlsx_test_wizard</field>
+        <field name="print_report_name">'Test Report Sale Order Xlsx123 Wizard'</field>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>
+
+
